@@ -1,0 +1,62 @@
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="login()">
+            <mat-form-field>
+                <input type="text" matInput placeholder="Username" formControlName="username" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="password" matInput placeholder="Password" formControlName="password" required>
+            </mat-form-field>
+            <p *ngIf="error" class="error">
+                {{ error }}
+            </p>
+
+            <div class="button">
+                <button type="button" mat-button (click)="register()">Register</button>
+                <button type="submit" mat-raised-button color="primary">Login</button>
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>
+
+
+<h1 style="margin-top: 100px; width: 500px">Users <span> (for testing)</span></h1>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef class="datatable-left-spacer"> id </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="datatable-left-spacer"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <!-- User Column -->
+    <ng-container matColumnDef="user">
+        <mat-header-cell *matHeaderCellDef> user </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+    </ng-container>
+
+    <!-- Password Column -->
+    <ng-container matColumnDef="password">
+        <mat-header-cell *matHeaderCellDef> password </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.password}} </mat-cell>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="role">
+        <mat-header-cell *matHeaderCellDef> role </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
+    </ng-container>
+
+    <!-- delete Column -->
+    <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef class="datatable-right-spacer"> delete </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="datatable-right-spacer">
+            <mat-icon *ngIf="element.role != 'admin'" (click)="deleteUser(element)" style="color: red">close</mat-icon>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns "></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

@@ -1,0 +1,58 @@
+table {
+    width: 100%;
+}
+
+mat-table {
+    width: 700px;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.datatable-right-spacer {
+    display: flex;
+    flex: 0 0 10%;
+    justify-content: center;
+    padding-right: 0px;
+}
+
+.datatable-left-spacer {
+    display: flex;
+    flex: 0 0 10%;
+    justify-content: center;
+    padding-left: 0px;
+}
+
+.expander-row td {
+    width: 100%
+}
+
+mat-row,
+mat-footer-row {
+    /* height: 48px; */
+    min-height: 0px
+}
+
+.expander-detail {
+    overflow: hidden;
+    display: flex;
+}
+
+.expander-padding {
+    padding: 16px;
+}
+
+tr.expander-row {
+    height: 0;
+}
+
+.normal-row {
+    height: 40px;
+    border-bottom-width: 0;
+}

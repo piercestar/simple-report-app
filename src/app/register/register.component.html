@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span> Register </span>
+        <span class="example-spacer"></span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<form [formGroup]="registerForm" (ngSubmit)="save()">
+    <div mat-dialog-content>
+
+        <mat-form-field appearance="standard">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" required>
+        </mat-form-field>
+
+        <p *ngIf="error" class="error">
+            {{error}}
+        </p>
+
+    </div>
+
+    <div mat-dialog-actions style="float: right">
+        <button mat-flat-button type="button" color="secondary" (click)="return()">Back</button>
+        <button mat-flat-button type="submit" color="primary">Save</button>
+    </div>
+</form>
