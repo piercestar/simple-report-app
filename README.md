@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Entity Relationships
 
-![Image of Yaktocat](https://github.com/simple-report-app/src/assets/Relationship Diagram.png)
+![Image of Yaktocat](https://github.com/piercestar/simple-report-app/blob/master/src/assets/Relationship%20Diagram.png?raw=true)
 
 ## User Guide
 
